@@ -22,6 +22,37 @@ function App() {
     }
   ]
 
+  const data = [
+    {
+      date: '01 set',
+      value: 4000
+    },
+    {
+      date: '02 set',
+      value: 3000
+    },
+    {
+      date: '03 set',
+      value: 2000
+    },
+    {
+      date: '04 set',
+      value: 2780
+    },
+    {
+      date: '05 set',
+      value: 1890
+    },
+    {
+      date: '06 set',
+      value: 2390
+    },
+    {
+      date: '07 set',
+      value: 3490
+    },
+  ]
+
   return (
     <div className="app">
       <div>
@@ -30,7 +61,7 @@ function App() {
         ))}
       </div>
       <div className="report-daily-graphic">
-        <ReportDailyGraphic />
+        <ReportDailyGraphic data={data} />
       </div>
     </div>
   );
