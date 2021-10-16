@@ -14,9 +14,9 @@ export default class ReportDailyGraphic extends PureComponent {
           }}
         >
           <CartesianGrid vertical={false} />
-          <XAxis dataKey="date" />
+          <XAxis dataKey="data" />
           <YAxis yAxisId="right" orientation="right" tickFormatter={(label) => label ? `${label} mil` : label} />
-          <Line dataKey="value" yAxisId="right" type="monotone" stroke="#82ca9d" />
+          <Line dataKey="segundos" yAxisId="right" type="monotone" stroke="#82ca9d" />
           <Tooltip />
         </LineChart>
       </ResponsiveContainer>
