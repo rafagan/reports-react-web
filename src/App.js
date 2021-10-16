@@ -1,5 +1,6 @@
-import './App.css';
-import ReportField from './components/ReportField';
+import './App.css'
+import ReportField from './components/ReportField'
+import ReportDailyGraphic from './components/ReportDailyGraphic'
 
 function App() {
   const reportFields = [
@@ -22,10 +23,15 @@ function App() {
   ]
 
   return (
-    <div>
-      {reportFields.map(reportField => (
-        <ReportField name={reportField.name} value={reportField.value} />
-      ))}
+    <div className="app">
+      <div>
+        {reportFields.map((reportField, index) => (
+          <ReportField key={index} name={reportField.name} value={reportField.value} />
+        ))}
+      </div>
+      <div className="report-daily-graphic">
+        <ReportDailyGraphic />
+      </div>
     </div>
   );
 }
