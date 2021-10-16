@@ -3,8 +3,8 @@ import './ReportField.css'
 function ReportField(props) {
   return (
     <div className="report-field">
-      <h3>Usuários</h3>
-      <h1>13 mil</h1>
+      <h3>{props.name}</h3>
+      <h1>{props.value}</h1>
     </div>
   );
 }
