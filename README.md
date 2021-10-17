@@ -1,4 +1,7 @@
-<<<<<<< HEAD
+# reports-react-web
+
+Project to teach students basic report presentation and back end integration using React
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,7 +72,3 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# reports-react-web
-Project to teach students basic report presentation and back end integration using React
->>>>>>> 96ed50ff5c4c70479f0b1d366b5089b1d283208f
