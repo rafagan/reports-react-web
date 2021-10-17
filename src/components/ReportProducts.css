@@ -1,0 +1,15 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.activityType {
+  margin-bottom: 16px;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.products {
+  width: 800px;
+}

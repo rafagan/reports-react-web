@@ -3,10 +3,12 @@ import ReportField from "./components/ReportField"
 import ReportDailyGraphic from "./components/ReportDailyGraphic"
 import Api from './api/Api'
 import {Component} from "react"
+import ReportProducts from "./components/ReportProducts";
 
 class App extends Component {
   constructor(props) {
     super(props)
+    this.onChangeActivityType = this.onChangeActivityType.bind(this)
 
     this.reportFields = {
       totalVisits: {
@@ -30,10 +32,16 @@ class App extends Component {
     this.graphicsData = []
     this.products = []
     this.activityTypes = [
-      'trilha', 'cachoeira', 'camping', 'salto',
-      'cafe', 'casa', 'rota', 'passeio', 'ingresso'
-    ]
-    this.activityType = this.activityTypes[0]
+      'trilha',
+      'cachoeira',
+      'camping',
+      'salto',
+      'cafe',
+      'casa',
+      'rota',
+      'passeio',
+      'ingresso'
+    ].sort()
 
     this.api = new Api()
   }
@@ -68,9 +76,8 @@ class App extends Component {
   }
 
   onChangeActivityType(event) {
-    const at = event.target.value
-    console.log(at)
-    this.activityType = at
+
+    this.activityType = event.target.value
     this.fetchProducts()
   }
 
@@ -86,28 +93,11 @@ class App extends Component {
           <ReportDailyGraphic data={this.graphicsData} />
         </div>
         <div>
-          <h1>Produtos mais acessados por tipo de atividade</h1>
-          <select onChange={this.onChangeActivityType}>
-            {this.activityTypes.map(at => (
-              <option key={at} value={at}>{at}</option>
-            ))}
-          </select>
-          <table>
-            <tbody>
-            <tr>
-              <th>ID</th>
-              <th>Nome</th>
-              <th>Quantidade</th>
-            </tr>
-            {this.products.map(p => (
-              <tr key={p.id}>
-                <td>{p.id}</td>
-                <td>{p.name}</td>
-                <td>{p.amount}</td>
-              </tr>
-            ))}
-            </tbody>
-          </table>
+          <ReportProducts
+            onChangeActivityType={this.onChangeActivityType}
+            activityTypes={this.activityTypes}
+            products={this.products}
+          />
         </div>
       </div>
     )

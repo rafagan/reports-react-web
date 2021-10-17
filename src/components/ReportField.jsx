@@ -6,7 +6,7 @@ function ReportField(props) {
       <h3>{props.name}</h3>
       <h1>{props.value}</h1>
     </div>
-  );
+  )
 }
 
-export default ReportField;
+export default ReportField
