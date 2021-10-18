@@ -3,7 +3,9 @@ import axios from 'axios'
 export default class Api {
   constructor() {
     this.api = axios.create({
-      baseURL: 'http://localhost:5000'
+      baseURL: process.env.NODE_ENV === 'production'
+        ? 'http://ec2-18-212-102-206.compute-1.amazonaws.com:5000'
+        : 'http://localhost:5000'
     })
   }
 
@@ -43,7 +45,7 @@ export default class Api {
 
   async getMostVisitedProducts(activityType) {
     const response = await this.api.get(`/products/${activityType}/`)
-    console.log(response)
+    // console.log(response)
     return response.data.payload
   }
 }
