@@ -76,7 +76,6 @@ class App extends Component {
   }
 
   onChangeActivityType(event) {
-
     this.activityType = event.target.value
     this.fetchProducts()
   }
